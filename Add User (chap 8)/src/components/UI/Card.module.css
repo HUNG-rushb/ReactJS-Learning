@@ -1,0 +1,5 @@
+.card {
+  background-color: gainsboro;
+  box-shadow: 0 2px 8px rgb(106, 91, 91);
+  border-radius: 15px;
+}
