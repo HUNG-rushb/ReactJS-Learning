@@ -1,11 +1,11 @@
-import { Fragment, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { Fragment, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import Cart from './components/Cart/Cart';
-import Layout from './components/Layout/Layout';
-import Products from './components/Shop/Products';
-import { uiActions } from './store/ui-slice';
-import Notification from './components/UI/Notification';
+import Cart from "./components/Cart/Cart";
+import Layout from "./components/Layout/Layout";
+import Products from "./components/Shop/Products";
+import { uiActions } from "./store/ui-slice";
+import Notification from "./components/UI/Notification";
 
 let isInitial = true;
 
@@ -19,28 +19,29 @@ function App() {
     const sendCartData = async () => {
       dispatch(
         uiActions.showNotification({
-          status: 'pending',
-          title: 'Sending...',
-          message: 'Sending cart data!',
+          status: "pending",
+          title: "Sending...",
+          message: "Sending cart data!",
         })
       );
+
       const response = await fetch(
-        'https://react-http-6b4a6.firebaseio.com/cart.json',
+        "https://react-http-6b4a6.firebaseio.com/cart.json",
         {
-          method: 'PUT',
+          method: "PUT",
           body: JSON.stringify(cart),
         }
       );
 
       if (!response.ok) {
-        throw new Error('Sending cart data failed.');
+        throw new Error("Sending cart data failed.");
       }
 
       dispatch(
         uiActions.showNotification({
-          status: 'success',
-          title: 'Success!',
-          message: 'Sent cart data successfully!',
+          status: "success",
+          title: "Success!",
+          message: "Sent cart data successfully!",
         })
       );
     };
@@ -53,9 +54,9 @@ function App() {
     sendCartData().catch((error) => {
       dispatch(
         uiActions.showNotification({
-          status: 'error',
-          title: 'Error!',
-          message: 'Sending cart data failed!',
+          status: "error",
+          title: "Error!",
+          message: "Sending cart data failed!",
         })
       );
     });
