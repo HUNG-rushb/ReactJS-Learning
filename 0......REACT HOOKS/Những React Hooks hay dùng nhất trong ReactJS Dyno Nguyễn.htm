@@ -1,0 +1,653 @@
+<!doctype html><html class="no-js" lang="vi" prefix="og: https://ogp.me/ns#"><head itemscope="itemscope" itemtype="http://schema.org/WebSite"><meta charset="UTF-8"><link rel="profile" href="http://gmpg.org/xfn/11"><link rel="pingback" href="https://dynonguyen.com/xmlrpc.php"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta itemprop="name" content="Dyno Nguyễn"><meta itemprop="creator accountablePerson" content="Dyno Nguyễn"><title>Những React Hooks hay dùng nhất trong ReactJS | Dyno Nguyễn</title><meta name="description" content="React Hooks ra đời với những tính năng vô cùng mạnh mẽ, giúp chúng ta xây dựng các functional component đầy đủ tính năng như class component."/><meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/><link rel="canonical" href="https://dynonguyen.com/nhung-react-hook-hay-dung-nhat-trong-reactjs/" /><meta property="og:locale" content="vi_VN" /><meta property="og:type" content="article" /><meta property="og:title" content="Những React Hooks hay dùng nhất trong ReactJS | Dyno Nguyễn" /><meta property="og:description" content="React Hooks ra đời với những tính năng vô cùng mạnh mẽ, giúp chúng ta xây dựng các functional component đầy đủ tính năng như class component." /><meta property="og:url" content="https://dynonguyen.com/nhung-react-hook-hay-dung-nhat-trong-reactjs/" /><meta property="og:site_name" content="Dyno Nguyễn" /><meta property="article:publisher" content="https://www.facebook.com/dynonguyenblog" /><meta property="article:author" content="https://facebook.com/TuanNguyen250400" /><meta property="article:tag" content="JavaScript" /><meta property="article:tag" content="reactjs" /><meta property="article:tag" content="Series về JavaScript" /><meta property="article:section" content="Học ReactJS" /><meta property="og:updated_time" content="2021-09-11T22:27:11+07:00" /><meta property="og:image" content="https://dynonguyen.com/wp-content/uploads/2021/08/react-hooks-thumbnail.jpg" /><meta property="og:image:secure_url" content="https://dynonguyen.com/wp-content/uploads/2021/08/react-hooks-thumbnail.jpg" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /><meta property="og:image:alt" content="React Hooks" /><meta property="og:image:type" content="image/jpeg" /><meta property="article:published_time" content="2021-08-23T18:42:30+07:00" /><meta property="article:modified_time" content="2021-09-11T22:27:11+07:00" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content="Những React Hooks hay dùng nhất trong ReactJS | Dyno Nguyễn" /><meta name="twitter:description" content="React Hooks ra đời với những tính năng vô cùng mạnh mẽ, giúp chúng ta xây dựng các functional component đầy đủ tính năng như class component." /><meta name="twitter:site" content="@TunNguy73522840" /><meta name="twitter:creator" content="@TunNguy7352284" /><meta name="twitter:image" content="https://dynonguyen.com/wp-content/uploads/2021/08/react-hooks-thumbnail.jpg" /><meta name="twitter:label1" content="Written by" /><meta name="twitter:data1" content="Dyno Nguyễn" /><meta name="twitter:label2" content="Time to read" /><meta name="twitter:data2" content="10 minutes" /> <script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":["Organization","Person"],"@id":"https://dynonguyen.com/#person","name":"Dyno Nguy\u1ec5n Blog","url":"https://dynonguyen.com","email":"tuannguyentn2504@gmail.com","address":{"@type":"PostalAddress","streetAddress":"\u0110\u01b0\u1eddng s\u1ed1 8","addressLocality":"ph\u01b0\u1eddng Linh Trung","addressRegion":"Th\u00e0nh Ph\u1ed1 Th\u1ee7 \u0110\u1ee9c","postalCode":"721400","addressCountry":"Vi\u1ec7t Nam"},"logo":{"@type":"ImageObject","@id":"https://dynonguyen.com/#logo","url":"https://dynonguyen.com/wp-content/uploads/2021/08/logo.png","caption":"Dyno Nguy\u1ec5n Blog","inLanguage":"vi"},"telephone":"0377757578","image":{"@id":"https://dynonguyen.com/#logo"}},{"@type":"WebSite","@id":"https://dynonguyen.com/#website","url":"https://dynonguyen.com","name":"Dyno Nguy\u1ec5n Blog","publisher":{"@id":"https://dynonguyen.com/#person"},"inLanguage":"vi"},{"@type":"ImageObject","@id":"https://dynonguyen.com/wp-content/uploads/2021/08/react-hooks-thumbnail.jpg","url":"https://dynonguyen.com/wp-content/uploads/2021/08/react-hooks-thumbnail.jpg","width":"1200","height":"630","caption":"React Hooks","inLanguage":"vi"},{"@type":"BreadcrumbList","@id":"https://dynonguyen.com/nhung-react-hook-hay-dung-nhat-trong-reactjs/#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"https://dynonguyen.com","name":"Trang ch\u1ee7"}},{"@type":"ListItem","position":"2","item":{"@id":"https://dynonguyen.com/series-ve-javascript/reactjs/","name":"H\u1ecdc ReactJS"}},{"@type":"ListItem","position":"3","item":{"@id":"https://dynonguyen.com/nhung-react-hook-hay-dung-nhat-trong-reactjs/","name":"Nh\u1eefng React Hooks hay d\u00f9ng nh\u1ea5t trong ReactJS"}}]},{"@type":"Person","@id":"https://dynonguyen.com/tac-gia/dyno-nguyen/","name":"Dyno Nguy\u1ec5n","description":"Howdy ! M\u00ecnh l\u00e0 Tu\u1ea5n, m\u1ecdi ng\u01b0\u1eddi c\u00f3 th\u1ec3 g\u1ecdi m\u00ecnh l\u00e0 Dyno Nguy\u1ec5n. M\u00ecnh hi\u1ec7n t\u1ea1i \u0111ang l\u00e0 m\u1ed9t Frontend Developer v\u00e0 ch\u00e0o m\u1eebng m\u1ecdi ng\u01b0\u1eddi \u0111\u1ebfn v\u1edbi Blog dynonguyen.com","url":"https://dynonguyen.com/tac-gia/dyno-nguyen/","image":{"@type":"ImageObject","@id":"https://dynonguyen.com/wp-content/litespeed/avatar/6e086aa48fd503ae7846140027ae44c0.jpg","url":"https://dynonguyen.com/wp-content/litespeed/avatar/6e086aa48fd503ae7846140027ae44c0.jpg","caption":"Dyno Nguy\u1ec5n","inLanguage":"vi"},"sameAs":["https://dynonguyen.com","https://facebook.com/TuanNguyen250400","https://twitter.com/TunNguy7352284"]},{"@type":"WebPage","@id":"https://dynonguyen.com/nhung-react-hook-hay-dung-nhat-trong-reactjs/#webpage","url":"https://dynonguyen.com/nhung-react-hook-hay-dung-nhat-trong-reactjs/","name":"Nh\u1eefng React Hooks hay d\u00f9ng nh\u1ea5t trong ReactJS | Dyno Nguy\u1ec5n","datePublished":"2021-08-23T18:42:30+07:00","dateModified":"2021-09-11T22:27:11+07:00","author":{"@id":"https://dynonguyen.com/tac-gia/dyno-nguyen/"},"isPartOf":{"@id":"https://dynonguyen.com/#website"},"primaryImageOfPage":{"@id":"https://dynonguyen.com/wp-content/uploads/2021/08/react-hooks-thumbnail.jpg"},"inLanguage":"vi","breadcrumb":{"@id":"https://dynonguyen.com/nhung-react-hook-hay-dung-nhat-trong-reactjs/#breadcrumb"}},{"@type":"Article","headline":"Nh\u1eefng React Hooks hay d\u00f9ng nh\u1ea5t trong ReactJS | Dyno Nguy\u1ec5n","keywords":"react hook,hook,reactjs,functional component,class component","datePublished":"2021-08-23T18:42:30+07:00","dateModified":"2021-09-11T22:27:11+07:00","author":{"@id":"https://dynonguyen.com/tac-gia/dyno-nguyen/"},"publisher":{"@id":"https://dynonguyen.com/#person"},"description":"React Hooks ra \u0111\u1eddi v\u1edbi nh\u1eefng t\u00ednh n\u0103ng v\u00f4 c\u00f9ng m\u1ea1nh m\u1ebd, gi\u00fap ch\u00fang ta x\u00e2y d\u1ef1ng c\u00e1c functional component \u0111\u1ea7y \u0111\u1ee7 t\u00ednh n\u0103ng nh\u01b0 class component.","name":"Nh\u1eefng React Hooks hay d\u00f9ng nh\u1ea5t trong ReactJS | Dyno Nguy\u1ec5n","@id":"https://dynonguyen.com/nhung-react-hook-hay-dung-nhat-trong-reactjs/#richSnippet","isPartOf":{"@id":"https://dynonguyen.com/nhung-react-hook-hay-dung-nhat-trong-reactjs/#webpage"},"image":{"@id":"https://dynonguyen.com/wp-content/uploads/2021/08/react-hooks-thumbnail.jpg"},"inLanguage":"vi","mainEntityOfPage":{"@id":"https://dynonguyen.com/nhung-react-hook-hay-dung-nhat-trong-reactjs/#webpage"}}]}</script> <link rel='dns-prefetch' href='//fonts.googleapis.com' /><link rel='dns-prefetch' href='//s.w.org' /><link rel="alternate" type="application/rss+xml" title="Dòng thông tin Dyno Nguyễn &raquo;" href="https://dynonguyen.com/feed/" /><link rel="alternate" type="application/rss+xml" title="Dòng phản hồi Dyno Nguyễn &raquo;" href="https://dynonguyen.com/comments/feed/" /><link rel="shortcut icon" href="https://dynonguyen.com/wp-content/uploads/2021/08/favicon-1.png" type="image/x-icon" /><link rel="apple-touch-icon-precomposed" href="https://dynonguyen.com/wp-content/uploads/2021/08/favicon_152.png"><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-TileImage" content="https://dynonguyen.com/wp-content/uploads/2021/08/favicon_144.png"><link rel="alternate" type="application/rss+xml" title="Dyno Nguyễn &raquo; Những React Hooks hay dùng nhất trong ReactJS Dòng phản hồi" href="https://dynonguyen.com/nhung-react-hook-hay-dung-nhat-trong-reactjs/feed/" /><link rel='stylesheet' id='wp-block-library-css'  href='https://dynonguyen.com/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' /><style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}</style><link rel='stylesheet' id='ivory-search-styles-css'  href='https://dynonguyen.com/wp-content/plugins/add-search-to-menu/public/css/ivory-search.min.css' type='text/css' media='all' /><link rel='stylesheet' id='scribbler-theme-css'  href='https://dynonguyen.com/wp-content/themes/mts_scribbler/style.css' type='text/css' media='all' /><link rel='stylesheet' id='fontawesome-css'  href='https://dynonguyen.com/wp-content/themes/mts_scribbler/css/font-awesome.min.css' type='text/css' media='all' /><link rel='stylesheet' id='scribbler-responsive-css'  href='https://dynonguyen.com/wp-content/themes/mts_scribbler/css/scribbler-responsive.css' type='text/css' media='all' /><link rel='stylesheet' id='fixedtoc-style-css'  href='https://dynonguyen.com/wp-content/plugins/fixed-toc/frontend/assets/css/ftoc.min.css' type='text/css' media='all' /><style id='fixedtoc-style-inline-css' type='text/css'>.ftwp-in-post#ftwp-container-outer { height: auto; } .ftwp-in-post#ftwp-container-outer.ftwp-float-left { width: auto; } #ftwp-container.ftwp-wrap #ftwp-contents { width: 350px; height: 650px; } .ftwp-in-post#ftwp-container-outer #ftwp-contents { height: auto; } .ftwp-in-post#ftwp-container-outer.ftwp-float-left #ftwp-contents { width: auto; } #ftwp-container.ftwp-wrap #ftwp-trigger { width: 42px; height: 42px; font-size: 25.2px; } #ftwp-container #ftwp-trigger.ftwp-border-thin { font-size: 24.7px; } #ftwp-container.ftwp-wrap #ftwp-header { font-size: 20px; font-family: inherit; } #ftwp-container.ftwp-wrap #ftwp-header-title { font-weight: bold; } #ftwp-container.ftwp-wrap #ftwp-list { font-size: 16px; font-family: inherit; } #ftwp-container.ftwp-wrap #ftwp-list .ftwp-anchor::before { font-size: 6.4px; } #ftwp-container #ftwp-list.ftwp-strong-first>.ftwp-item>.ftwp-anchor .ftwp-text { font-size: 17.6px; } #ftwp-container.ftwp-wrap #ftwp-list.ftwp-strong-first>.ftwp-item>.ftwp-anchor::before { font-size: 8px; } #ftwp-container.ftwp-wrap #ftwp-trigger { color: #ffffff; background: rgba(33,161,113,0.95); } #ftwp-container.ftwp-wrap #ftwp-trigger { border-color: rgba(33,161,113,0.95); } #ftwp-container.ftwp-wrap #ftwp-contents { border-color: rgba(33,161,113,0.95); } #ftwp-container.ftwp-wrap #ftwp-header { color: #282b3c; background: rgba(255,255,255,0.95); } #ftwp-container.ftwp-wrap #ftwp-contents:hover #ftwp-header { background: #ffffff; } #ftwp-container.ftwp-wrap #ftwp-list { color: #282b3c; background: rgba(255,255,255,0.95); } #ftwp-container.ftwp-wrap #ftwp-contents:hover #ftwp-list { background: #ffffff; } #ftwp-container.ftwp-wrap #ftwp-list .ftwp-anchor:hover { color: #21a171; } #ftwp-container.ftwp-wrap #ftwp-list .ftwp-anchor:focus, #ftwp-container.ftwp-wrap #ftwp-list .ftwp-active, #ftwp-container.ftwp-wrap #ftwp-list .ftwp-active:hover { color: #fff; } #ftwp-container.ftwp-wrap #ftwp-list .ftwp-text::before { background: rgba(33,161,113,0.95); } .ftwp-heading-target::before { background: rgba(33,161,113,0.95); }
+.wp-dark-mode-active #ftwp-trigger{ background-color: #242525 !important; } .wp-dark-mode-active #ftwp-header{ background-color: #242525 !important; } .wp-dark-mode-active #ftwp-list{ background-color: #242525 !important; } #ftwp-header-control{ margin-right: 12px !Important; } #ftwp-header-title{ font-size: 20px !important; } #ftwp-container.ftwp-wrap #ftwp-list .ftwp-anchor{ padding-top: 8px !important; padding-bottom: 8px !important; } #ftwp-container-outer{ width: 100% !important; margin-bottom: 20px auto !important; }</style><link rel='stylesheet' id='enlighterjs-css'  href='https://dynonguyen.com/wp-content/plugins/enlighter/cache/enlighterjs.min.css' type='text/css' media='all' /><link rel='stylesheet' id='scribbler-dynamic-css-css'  href='//dynonguyen.com/wp-content/uploads/scribbler-styles/scribbler-789.css?timestamp=1643870707&#038;ver=1.0.12' type='text/css' media='all' /> <script type='text/javascript' src='https://dynonguyen.com/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script> <script type='text/javascript' src='https://dynonguyen.com/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js' defer data-deferred="1"></script> <link rel="https://api.w.org/" href="https://dynonguyen.com/wp-json/" /><link rel="alternate" type="application/json" href="https://dynonguyen.com/wp-json/wp/v2/posts/789" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://dynonguyen.com/xmlrpc.php?rsd" /><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://dynonguyen.com/wp-includes/wlwmanifest.xml" /><meta name="generator" content="WordPress 5.9.2" /><link rel='shortlink' href='https://dynonguyen.com/?p=789' /><link rel="alternate" type="application/json+oembed" href="https://dynonguyen.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F" /><link rel="alternate" type="text/xml+oembed" href="https://dynonguyen.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F&#038;format=xml" /><style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style><style type="text/css" id="wp-custom-css">/* Desktop layout */
+.post-info-upper{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.latestPost .thetime{
+	flex-basis: 85px;
+}
+.post-info-upper .thecategory{
+	flex-grow: 1;
+}
+.post-info-upper .thetime{
+	margin-top: 0 !important;
+	text-align: right;
+}
+#latest-posts .post-info-upper .thecategory a{
+		font-size: 11px !important;
+		line-height: 22px !important;
+		margin: 0 !important;
+}
+.layout-default .front-view-content{
+	  font-size: 15px !important;
+		margin-bottom: 10px !important;
+		word-break: break-word;
+		display: -webkit-box;
+		-webkit-line-clamp: 3 !important;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		-webkit-box-orient: vertical;
+}
+.layout-default .latestPost .title a{
+		font-weight: 600 !important;
+}
+
+@media screen and (min-width: 1140px){
+	.container{
+		 max-width: 1200px;
+	}
+	.taxonomy-description{
+		display: none !important;
+	}
+	h1.title.entry-title.page-title{
+		font-size: 36px !important;	
+		font-weight: 600;
+	}
+	.article section{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 28px;
+	}
+	.article section:before{
+		display: none;
+	}	
+	.layout-default .latestPost{
+		display: flex;
+		flex-direction: column;
+	}
+	#latest-posts #featured-thumbnail{
+		margin-bottom: 0;
+		flex-shrink: 0;
+		overflow: hidden;
+		border-radius: 12px 12px 0 0;
+	}	
+	#latest-posts .featured-thumbnail img{
+		height: 200px !important;
+		transition: all 0.3s;
+	}	
+	#latest-posts .featured-thumbnail img:hover{
+		transform: scale(1.1)
+	}	
+	.layout-default .wrapper{
+		padding: 32px 28px 12px;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}	
+	#_dyno-time-to-read{
+		margin-top: auto;
+	}	
+	.post-info-upper{
+		margin-bottom: 16px !important;
+	}	
+	.latestPost .post-info-bottom{
+		display: none !important;
+	}	
+	.post-info-upper .thecategory a{
+		font-size: 12px !important;
+		line-height: 28px !important;
+	}	
+	.latestPost .title a{
+		min-height: 52px;
+	}
+	.latestPost .title a{
+		font-size: 20px !important;
+		font-weight: 600 !important;
+		line-height: 1.3 !important;
+		letter-spacing: 0.15px;
+	}	
+	.layout-default .front-view-content{
+		font-size: 15px !important;
+		margin-bottom: 10px !important;
+		-webkit-line-clamp: 2 !important;
+	}	
+	.layout-default:after{
+		display: none;
+	}	
+	#site-footer{
+		margin-top: 28px!important;
+	}
+}
+
+/* ads */
+.dyno-ad-inside{
+	margin: 24px auto !important;
+}
+
+.dyno-ad-before-footer, .dyno-ad-before-footer .adsbygoogle, .dyno-ad-before-footer #aswift_4_expand, #aswift_4_anchor{
+	max-width: 840px !important;
+	width: 100% !important;
+}
+
+.broken_link, a.broken_link{
+	text-decoration: none !important;
+}
+
+li::marker{
+	color: #fff;
+}
+
+@media screen and (max-width: 767px){
+	.dyno-ad-sidebar{
+		display: none !important;
+	}
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F1F1F1;
+
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 25px;
+  background-color: #A8A8A8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
+/* header */
+a#pull span{
+	visibility: hidden;
+}
+
+@media screen and (max-width: 865px){
+	a#pull {
+		font-size: 24px !important;
+	}	
+}
+
+.sticky-navigation-active #header {
+  background: #fff !important;
+	box-shadow: 0px 2px 8px 1px rgba(180,180,180,0.35)
+}
+
+#logo{
+	display: flex;
+	align-items: center;
+}
+
+#logo img{
+	height: 48px !important;
+}
+
+/* wrapper */
+#wrapper{
+	padding-top: 2.8em;
+}
+
+/* search bar in sidebar */
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper{
+	border: none !important;
+	border-radius: 12px;
+	padding: 12px 8px;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button{
+	padding: 0.5em 0.75em;
+	background-color: #e5e5e5;
+	border: none;
+	border-radius: 12px;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button:hover{
+	transition: all 0.35s;
+	background-color: #dadada !important;
+}
+
+.wp-block-search .wp-block-search__button{
+	cursor: pointer;
+}
+
+#search-icon{
+	fill: #666 !important;
+}
+
+.f-widget-3 li {
+	margin-left: 0 !important;
+}
+
+.f-widget-3 li a{
+	color: #8f9197;
+	font-weight: 600;
+}
+.f-widget-3 li a:hover{
+	color: #f27232;
+}
+
+/* search bar in menu */
+#menu-main-menu li{
+	margin: 0px 40px 0px 0px !important;
+}
+
+#menu-main-menu .search-icon{
+	transform: translateY(5px);
+}
+
+#menu-main-menu .search-icon:hover .search-icon-path{
+	transition: all 0.35s;
+	fill: #f27232 !important;
+}
+
+#menu-main-menu li:last-child{
+	margin-right: 0 !important;
+}
+
+.is-form-style button.is-search-submit{
+	cursor: pointer;
+}
+
+.is-form-id-330{
+	margin: 24px auto;	
+}
+
+#is-search-input-330{
+	height: 48px !important;
+	border-radius: 8px !important;
+}
+
+.is-form-id-330 .is-search-submit{
+	transform: translate(-4px,6px);
+	border-radius: 8px !important;
+	cursor: pointer !important;
+}
+
+.wp-dark-mode-active .is-form-id-330 .is-search-submit:hover, .wp-dark-mode-active .is-search-icon:hover{
+	background-color: #343536 !important;
+	transition: all 0.35s;
+}
+
+
+/* post view */
+.post-views{
+	font-weight: 600;
+	color: #888;
+	font-size: 20px;
+}
+
+/* side bar */
+.sidebar .widget h2{
+	font-size: 28px;
+}
+
+/* heading tag */
+@media screen and (max-width: 1170px){
+	h1{
+		font-size: 38px !important;
+	}
+	h2{
+		font-size: 32px !important;
+	}
+	h3{
+		font-size: 30px !important;
+	}
+	h4{
+		font-size: 28px !important;
+	}
+	h5{
+		font-size: 24px !important;
+	}
+	h6{
+		font-size: 22px !important;
+	}
+}
+
+h3, h4, h5, h6 {
+	font-weight: 600 !important;
+}
+
+/* time to read */
+#_dyno-time-to-read{
+	font-size: 16px;
+	color: #666;
+	text-align: right;
+}
+
+/* code tag */
+code{
+	background-color: #eee;
+	padding: 6px 12px;
+	border-radius: 6px;
+}
+
+/* code syntax */
+.enlighter-default{
+	padding: 14px 8px !important;
+	border-radius: 8px;
+	box-shadow: 0 10px 25px 0 rgba(27,44,113,.15);
+}
+
+.enlighter-default{
+	font-size: 13px;
+}
+
+.wp-dark-mode-active .enlighter-default{
+	box-shadow: rgba(15,15,15, 0.15) 0px 10px 16px 0px !important;
+}
+
+.enlighter-t-dracula div.enlighter>div{
+	line-height: 1.8em !important;
+}
+
+.enlighter-t-dracula .enlighter-x10{
+	color: #50fa7b;
+  font-weight: 700;
+}
+
+.enlighter-t-dracula .enlighter-x16{
+	color: #E967D7;
+  font-weight: 700;
+}
+
+/* content */
+.single-title{
+	color: #282b3c !important;
+}
+
+.single_post ul li:before, article .single_page ul li:before{
+	color: #494949 !important;
+	line-height: 1.25 !important;
+}
+
+.single_post .post-info .thecategory a {
+	background-color: #21a171 !important;
+}
+
+.single_post .post-info .thecategory a:hover{
+	background-color:#1b896c !important;
+}
+
+/* image caption */
+.wp-block-image figcaption, .wp-block-table figcaption, .wp-block-embed figcaption{
+	text-align: center;
+	font-size: 14px;
+}
+
+/* footer */
+#copyright-note, copyright-note a{
+	text-align: center;
+	width: 100%;
+}
+
+.f-widget h3{
+	font-size: 15px !important;
+}
+
+.wp-block-tag-cloud{
+	white-space: break-spaces !important;
+}
+
+.wp-block-tag-cloud a{
+	color: #fff !important;
+	font-size: 12px !important;
+	padding: 2px 8px;
+	border: solid 1px #f27232;
+	border-radius: 8px;
+	margin: 4px;
+	display: inline-block;
+}
+
+.f-widget .wp-block-categories .cat-item{
+	margin-left: 0 !important;
+}
+
+/* memu */
+.navigation ul ul{
+	min-width: 280px;
+	max-width: 320px;
+}
+
+.fb_iframe_widget{
+	max-height: 250px !important;
+	overflow-y: auto;
+}
+
+
+@media screen and (max-width: 480px){
+	.shareit.floating{
+		margin-left: 5px !important;
+	}
+	.rank-math-breadcrumb{
+		line-height: 1.5 !important;
+	}
+	h1.single-title{
+		font-size: 30px !important;
+	}
+	h2 {
+		font-size: 28px !important;
+	}
+	h3 {
+		font-size: 24px !important;
+	}
+	h4 {
+		font-size: 20px !important;
+	}
+}
+ 
+@media screen and (max-width: 865px){
+	#logo a{
+		display: flex !important;
+		align-items: center;
+	}
+	
+	.wp-dark-mode-active #primary-navigation li a{
+		color: #fff !important;
+	}
+	
+	/* search in sidebar */
+	#block-23{
+		display: none !important;
+	}
+	
+	.wp-dark-mode-active #primary-navigation li:hover a{
+		color: #d5d5d5 !important;
+	}
+	
+	#header .container{
+		display: flex !important;
+		align-items: center;
+	}
+	
+	#header .logo-wrap{
+		margin-right: 0 !important;
+	}
+	
+	#primary-navigation{
+		margin-right: 18px;
+	}
+	
+	.astm-search-menu-wrapper{
+		display: none !important;
+	}
+	
+	.astm-search-menu .search-icon-path{
+		fill: #fff !important;
+	}
+	
+	.astm-search-menu .is-search-form{
+		top: 6px !important;
+		width: 90% !important;
+		margin: auto !important;
+	}
+}
+
+@media screen and (max-width: 1100px){
+		#header .header-buttons {
+		display: none !important;
+	}
+}</style><div class="astm-search-menu-wrapper is-menu-wrapper"><div><span class=" astm-search-menu is-menu sliding"><a title="" href="#"><svg width="20" height="20" class="search-icon" role="img" viewBox="2 9 20 5" focusable="false" aria-label="Search">
+<path class="search-icon-path" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></a><form  class="is-search-form is-form-style is-form-style-3 is-form-id-0 " action="https://dynonguyen.com/" method="get" role="search" ><label for="is-search-input-0"><span class="is-screen-reader-text">Search for:</span><input  type="search" id="is-search-input-0" name="s" value="" class="is-search-input" placeholder="Search here..." autocomplete=off /></label><button type="submit" class="is-search-submit"><span class="is-screen-reader-text">Search Button</span><span class="is-search-icon"><svg focusable="false" aria-label="Search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></button></form><div class="search-close"></div></span></div></div></head><body id="blog" class="post-template-default single single-post postid-789 single-format-standard mts_scribbler has-ftoc main"><div class="main-container"><div class="clear" id="catcher"></div><header id="site-header" class="main-header header-default sticky-navigation" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader"><div id="header"><div class="container"><div class="logo-wrap"><h2 id="logo" class="image-logo clearfix"><a href="https://dynonguyen.com"><img src="https://dynonguyen.com/wp-content/uploads/2021/08/main-logo.png" alt="Dyno Nguyễn"></a></h2></div><div id="primary-navigation" class="primary-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"><a href="#" id="pull" class="toggle-mobile-menu"><span>Menu</span></a><nav class="navigation clearfix"><ul id="menu-main-menu" class="menu clearfix"><li id="menu-item-191" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-191"><a href="https://dynonguyen.com/series-ve-javascript/"><i class="fa fa-heart"></i> Series Javascript</a><ul class="sub-menu"><li id="menu-item-836" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-836"><a href="https://dynonguyen.com/series-ve-javascript/hoc-javascript-chuyen-sau/">JavaScript Chuyên Sâu</a></li><li id="menu-item-837" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-837"><a href="https://dynonguyen.com/series-ve-javascript/reactjs/">Học ReactJS</a></li></ul></li><li id="menu-item-189" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-189"><a href="https://dynonguyen.com/code-cung-dyno/"><i class="fa fa-code"></i> Code Cùng Dyno</a><ul class="sub-menu"><li id="menu-item-627" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-627"><a href="https://dynonguyen.com/code-cung-dyno/luyen-tap-ui-ux/">Luyện tập UI/UX</a></li><li id="menu-item-668" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-668"><a href="https://dynonguyen.com/code-cung-dyno/pha-dao-hackerrank/">Phá Đảo HackerRank</a><ul class="sub-menu"><li id="menu-item-669" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-669"><a href="https://dynonguyen.com/code-cung-dyno/pha-dao-hackerrank/interview-preparation-kit/">Interview Preparation Kit</a></li></ul></li></ul></li><li id="menu-item-190" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-190"><a href="https://dynonguyen.com/kien-thuc-huu-ich/"><i class="fa fa-rocket"></i> Kiến thức hữu ích</a><ul class="sub-menu"><li id="menu-item-1486" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1486"><a href="https://dynonguyen.com/series-vim-toan-tap/">Series Vim toàn tập</a></li><li id="menu-item-935" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-935"><a href="https://dynonguyen.com/kien-thuc-huu-ich/kham-pha/">Góc khám phá</a></li><li id="menu-item-936" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-936"><a href="https://dynonguyen.com/kien-thuc-huu-ich/ung-dung-xin-xo/">Ứng dụng xịn xò</a></li><li id="menu-item-626" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-626"><a href="https://dynonguyen.com/sorting-visualizer/">Sorting Visualizer</a></li></ul></li><li id="menu-item-838" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-838"><a href="https://dynonguyen.com/chuyen-ben-le/"><i class="fa fa-coffee"></i> Chuyện Bên Lề</a></li><li id="menu-item-193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-193"><a href="https://dynonguyen.com/about-me/"><i class="fa fa-user"></i> About Me</a></li><li class=" astm-search-menu is-menu sliding menu-item"><a href="#" aria-label="Search Icon Link"><svg width="20" height="20" class="search-icon" role="img" viewBox="2 9 20 5" focusable="false" aria-label="Search">
+<path class="search-icon-path" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></a><form  class="is-search-form is-form-style is-form-style-3 is-form-id-0 " action="https://dynonguyen.com/" method="get" role="search" ><label for="is-search-input-0"><span class="is-screen-reader-text">Search for:</span><input  type="search" id="is-search-input-0" name="s" value="" class="is-search-input" placeholder="Search here..." autocomplete=off /></label><button type="submit" class="is-search-submit"><span class="is-screen-reader-text">Search Button</span><span class="is-search-icon"><svg focusable="false" aria-label="Search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></button></form><div class="search-close"></div></li></ul></nav><nav class="navigation mobile-only clearfix mobile-menu-wrapper"><ul id="menu-main-menu-1" class="menu clearfix"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-191"><a href="https://dynonguyen.com/series-ve-javascript/"><i class="fa fa-heart"></i> Series Javascript</a><ul class="sub-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-836"><a href="https://dynonguyen.com/series-ve-javascript/hoc-javascript-chuyen-sau/">JavaScript Chuyên Sâu</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-837"><a href="https://dynonguyen.com/series-ve-javascript/reactjs/">Học ReactJS</a></li></ul></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-189"><a href="https://dynonguyen.com/code-cung-dyno/"><i class="fa fa-code"></i> Code Cùng Dyno</a><ul class="sub-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-627"><a href="https://dynonguyen.com/code-cung-dyno/luyen-tap-ui-ux/">Luyện tập UI/UX</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-668"><a href="https://dynonguyen.com/code-cung-dyno/pha-dao-hackerrank/">Phá Đảo HackerRank</a><ul class="sub-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-669"><a href="https://dynonguyen.com/code-cung-dyno/pha-dao-hackerrank/interview-preparation-kit/">Interview Preparation Kit</a></li></ul></li></ul></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-190"><a href="https://dynonguyen.com/kien-thuc-huu-ich/"><i class="fa fa-rocket"></i> Kiến thức hữu ích</a><ul class="sub-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1486"><a href="https://dynonguyen.com/series-vim-toan-tap/">Series Vim toàn tập</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-935"><a href="https://dynonguyen.com/kien-thuc-huu-ich/kham-pha/">Góc khám phá</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-936"><a href="https://dynonguyen.com/kien-thuc-huu-ich/ung-dung-xin-xo/">Ứng dụng xịn xò</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-626"><a href="https://dynonguyen.com/sorting-visualizer/">Sorting Visualizer</a></li></ul></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-838"><a href="https://dynonguyen.com/chuyen-ben-le/"><i class="fa fa-coffee"></i> Chuyện Bên Lề</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-193"><a href="https://dynonguyen.com/about-me/"><i class="fa fa-user"></i> About Me</a></li><li class=" astm-search-menu is-menu sliding menu-item"><a href="#" aria-label="Search Icon Link"><svg width="20" height="20" class="search-icon" role="img" viewBox="2 9 20 5" focusable="false" aria-label="Search">
+<path class="search-icon-path" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></a><form  class="is-search-form is-form-style is-form-style-3 is-form-id-0 " action="https://dynonguyen.com/" method="get" role="search" ><label for="is-search-input-0"><span class="is-screen-reader-text">Search for:</span><input  type="search" id="is-search-input-0" name="s" value="" class="is-search-input" placeholder="Search here..." autocomplete=off /></label><button type="submit" class="is-search-submit"><span class="is-screen-reader-text">Search Button</span><span class="is-search-icon"><svg focusable="false" aria-label="Search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></button></form><div class="search-close"></div></li></ul></nav></div></div></div></header><div id="wrapper" class="single clearfix"><div class="container clearfix"><article class="article"><div id="content_box" class="cslayout"><nav aria-label="breadcrumbs" class="rank-math-breadcrumb"><p><a href="https://dynonguyen.com">Trang chủ</a><span class="separator"> &raquo; </span><a href="https://dynonguyen.com/series-ve-javascript/reactjs/">Học ReactJS</a><span class="separator"> &raquo; </span><span class="last">Những React Hooks hay dùng nhất trong ReactJS</span></p></nav><div id="post-789" class="g post post-789 type-post status-publish format-standard has-post-thumbnail hentry category-reactjs tag-series-ve-javascript tag-reactjs tag-series-javascript has_thumb post-ftoc"><div class="single_post"><header class="single-full-header clearfix"><div class="post-info"><div class="author-inner">						<span class="theauthorimage"><img alt='' src='https://dynonguyen.com/wp-content/litespeed/avatar/f04688242769f61fd4ee25712814bd47.jpg' srcset='https://dynonguyen.com/wp-content/litespeed/avatar/6e086aa48fd503ae7846140027ae44c0.jpg 2x' class='avatar avatar-48 photo' height='48' width='48' loading='lazy'/></span>
+<span class="theauthor"><a href="https://dynonguyen.com/tac-gia/dyno-nguyen/" title="Đăng bởi Dyno Nguyễn" rel="author">Dyno Nguyễn</a></span></div><div class="post-info-right">						<span class="thetime date updated"><span>23/08/2021</span></span><div class="thecategory"><a href="https://dynonguyen.com/series-ve-javascript/reactjs/" title="View all posts in Học ReactJS">Học ReactJS</a></div></div></div><h1 class="title single-title entry-title">Những React Hooks hay dùng nhất trong ReactJS</h1></header><div class="post-single-content box mark-links entry-content"><div class="shareit shareit-circular circular top">
+<a href="//www.facebook.com/share.php?m2w&s=100&p[url]=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F&p[images][0]=h&p[title]=Nh%E1%BB%AFng+React+Hooks+hay+d%C3%B9ng+nh%E1%BA%A5t+trong+ReactJS&u=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F&t=Nh%E1%BB%AFng+React+Hooks+hay+d%C3%B9ng+nh%E1%BA%A5t+trong+ReactJS" class="facebooksharebtn" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><span class="social-icon"><i class="fa fa-facebook-official"></i></span></a>
+<a href="//www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F&title=Những React Hooks hay dùng nhất trong ReactJS&source=url" class="linkedinbtn" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><span class="social-icon"><i class="fa fa-linkedin"></i></span><span class="social-text">Share</span></a>
+<a href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')" class="telegram"><span class="social-icon"><i class="fa fa-paper-plane"></i></span></a>
+<a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F&text=Những React Hooks hay dùng nhất trong ReactJS&url=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F&via=TunNguy7352284" class="twitterbutton" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><span class="social-icon"><i class="fa fa-twitter"></i></span></a></div><div class="thecontent"><div id="ftwp-postcontent"><p>React là một thư viện của JavaScript được phát triển bởi Facebook giúp chúng ta xây dựng các giao diện người dùng nhanh chóng và mạnh mẽ. Hooks được thêm vào ReactJS từ phiên bản 16.8 (được gọi là React Hooks) với những tính năng vô cùng mạnh mẽ hỗ trợ chúng ta xây dựng các functional component đầy đủ tính năng như class component trước kia.</p><p>Bài viết hôm nay, chúng ta sẽ đi qua các hooks cơ bản hay được dùng nhất trong React Hooks nhé. Let&#8217;s get started !</p><figure class="wp-block-image size-full is-resized"><img src="https://dynonguyen.com/wp-content/uploads/2021/08/react-hooks-thumbnail.jpg" alt="Các Hook hay dùng nhất trong React Hooks" class="wp-image-791" width="840" srcset="https://dynonguyen.com/wp-content/uploads/2021/08/react-hooks-thumbnail.jpg 1200w, https://dynonguyen.com/wp-content/uploads/2021/08/react-hooks-thumbnail-768x403.jpg 768w" sizes="(max-width: 1200px) 100vw, 1200px" title="Những React Hooks hay dùng nhất trong ReactJS 2"></figure><div id="ftwp-container-outer" class="ftwp-in-post ftwp-float-left"><div id="ftwp-container" class="ftwp-wrap ftwp-hidden-state ftwp-minimize ftwp-middle-right"><button type="button" id="ftwp-trigger" class="ftwp-shape-round ftwp-border-thin" title="click To Maximize The Table Of Contents"><span class="ftwp-trigger-icon ftwp-icon-bullet"></span></button><nav id="ftwp-contents" class="ftwp-shape-round ftwp-border-thin"><header id="ftwp-header"><span id="ftwp-header-control" class="ftwp-icon-bullet"></span><button type="button" id="ftwp-header-minimize" aria-labelledby="ftwp-header-title"></button><h3 id="ftwp-header-title">Nội dung bài viết</h3></header><ol id="ftwp-list" class="ftwp-liststyle-circle-o ftwp-effect-bounce-to-right ftwp-list-nest ftwp-strong-first ftwp-colexp ftwp-colexp-icon"><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-1"><span class="ftwp-text">Sơ lược về React Hooks</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-2"><span class="ftwp-text">Vì sao nên dùng React Hooks ?</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-3"><span class="ftwp-text">1. useState</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-4"><span class="ftwp-text">2. useRef</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-5"><span class="ftwp-text">3. useEffect</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-6"><span class="ftwp-text">4. useMemo</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-7"><span class="ftwp-text">5. useCallback</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-8"><span class="ftwp-text">6. useContext và useReducer</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-9"><span class="ftwp-text">Ứng dụng demo</span></a></li><li class="ftwp-item"><a class="ftwp-anchor" href="#ftoc-heading-10"><span class="ftwp-text">Tạm kết</span></a></li></ol></nav></div></div><h2 id="ftoc-heading-1" class="ftwp-heading">Sơ lược về React Hooks</h2><p>React Hooks chính thức được thêm vào ReactJS ở phiên bản 16.8 (tháng 2 năm 2019). Vậy trước khi có Hooks thì viết React như thế nào? 🤔</p><ul><li><strong>Class components (Stateful components)</strong>: là những component được viết bằng class, chúng được cung cấp rất nhiều các tính năng như <strong>State, Lifecycle</strong>, <strong>refs, &#8230;</strong></li><li><strong>Functional components (Stateless components)</strong>: là những component được viết như một function của JS, chỉ nhận vào dữ liệu thông qua props và render nó ra. Chúng không có State, Lifecycle và cũng không hỗ trợ refs.</li></ul><p>React Hooks ra đời với nhiệm vụ hỗ trợ chúng ta viết một <strong>functional component</strong> có đầy đủ các tính năng như một <strong>class component</strong> thông qua các hooks (hook là lưỡi câu, hiểu đơn giản nó như một hàm kéo dữ liệu, thứ ta cần về cho chúng ta).</p><p><strong>Bạn có thể tham khảo thêm</strong>:<a href="https://reactjs.org/docs/hooks-intro.html" target="_blank" type="URL" id="https://reactjs.org/docs/hooks-intro.html" rel="noreferrer noopener" class="broken_link"> Introducing Hooks &#8211; ReactJS</a></p><h2 id="ftoc-heading-2" class="ftwp-heading">Vì sao nên dùng React Hooks ?</h2><ul><li>Viết component ngắn gọn và dễ hiểu hơn rất nhiều so với dùng class.</li><li>Đầy đủ tính năng như class component.</li><li>Hưởng được các lợi ích của functional component như dễ test một hàm (nhận đầu vào và trả ra kết quả).</li><li>Loại bỏ được từ khoá <strong>&#8220;this&#8221;</strong> thường gây nhầm lẫn khi dùng class.</li><li>Không cần phải viết lại các class component cũ. Các component mới nên viết với hooks.</li><li>React Hooks chỉ được sử dụng trong functional component.</li><li>Dễ dàng custom các hooks như ý muốn theo từng nghiệp vụ khác nhau.</li></ul><h2 id="ftoc-heading-3" class="ftwp-heading">1. useState</h2><p><a href="https://reactjs.org/docs/hooks-state.html" target="_blank" type="URL" id="https://reactjs.org/docs/hooks-state.html" rel="noreferrer noopener nofollow" class="broken_link">useState</a> cho phép chúng ta khai báo một state trong functional component với cú pháp như sau:</p><pre class="EnlighterJSRAW" data-enlighter-language="js" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">const [state, setState] = useState(initialValue);
+
+// Hoặc
+const [state, setState] = useState(()=> {
+    // do something ...
+    return initialValue;
+})</pre><ul><li><strong>state</strong> chính là biến chứa local state, giống như state bên class.</li><li><strong>setState</strong> là một hàm dùng để update lại cái state này, nó tương tự this.setState() bên class.</li><li><strong>initialValue</strong> là giá trị khởi tạo đầu tiên của state. Chúng ta cũng có thể truyền vào một callback function để tính toán dữ liệu và trả về initValue.</li></ul><p><strong>Một vài lưu ý:</strong></p><ul><li>state thay đổi thì component sẽ re-render.</li><li>setState không hoạt động một cách đồng bộ, nhằm tăng performance cho hệ thống, tránh re-render không cần thiết. Để fix trường hợp này chúng ta có thể truyền vào một callback fn cho setState để lấy giá trị cũ.</li><li>callback function truyền vào useState chỉ được chạy duy nhất là đầu tiên.</li><li>Bạn có thể dùng nhiều state trong cùng một component nếu các state có ngữ nghĩa khác nhau.</li></ul><p><strong><mark>CHÚ Ý:</mark></strong> Mọi người nhớ kéo xuống phần <strong>ứng dụng demo</strong> bên dưới cùng, mình có ghi chú cụ thể các trường hợp gặp phải nhé cho tất cả các hook này nhé.</p><h2 id="ftoc-heading-4" class="ftwp-heading">2. useRef</h2><p><a href="https://reactjs.org/docs/hooks-reference.html#useref" target="_blank" type="URL" id="https://reactjs.org/docs/hooks-reference.html#useref" rel="noreferrer noopener nofollow" class="broken_link">useRef</a> dùng để lưu trữ các giá trị trong suốt vòng đời của một component. Nó thường được dùng để truy cập các thành phần trong DOM với thuộc tính ref. Cú pháp khai báo như sau:</p><pre class="EnlighterJSRAW" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">// khai báo
+const ref = useRef(initialValue);
+
+// truy cập dữ liệu
+ref.current
+
+// thay đổi dữ liệu
+ref.current = newValue;</pre><p><strong>Một vài điểm hay ho của useRef:</strong></p><ul><li>Bạn có thể truy cập và thay đổi giá trị trực tiếp của biến thông qua thuộc tính <code>current</code> của nó.</li><li>useRef sẽ không làm component bị re-render mỗi lần current thay đổi. Điều này rất hữu dụng cho việc tăng performance hệ thống.</li><li>Một vài ứng dụng thường dùng của useRef như ref đến ô input để auto focus, lấy kích thước của một element, lưu trữ giá trị input để validation, &#8230;</li></ul><div class="dyno-ad-inside"> <script="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7867386097812429" crossorigin="anonymous" defer data-deferred="1"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7867386097812429" data-ad-slot="6777104957"></ins> <script src="data:text/javascript;base64,KGFkc2J5Z29vZ2xlPXdpbmRvdy5hZHNieWdvb2dsZXx8W10pLnB1c2goe30p" defer></script> </div><h2 id="ftoc-heading-5" class="ftwp-heading">3. useEffect</h2><p>Khái niệm <strong>Side Effects</strong>: là những thao tác, event bên ngoài component của chúng ta như việc thao tác với DOM, call APIs, setTimeout, setInterval, &#8230;</p><p><strong>Clean up</strong> dùng để huỷ các đăng ký, các hàm đang được thực thi trong side effects. Có 2 loại sau:</p><ul><li><strong>Cần clean up</strong> (vì những hàm này vẫn sẽ tiếp tục chạy sau khi component đã bị <span style="text-decoration: underline" class="underline">unmount</span>, dẫn đến dữ liệu không có chỗ để render ra gây ra tình trạng <a href="https://vi.wikipedia.org/wiki/R%C3%B2_r%E1%BB%89_b%E1%BB%99_nh%E1%BB%9B" target="_blank" data-type="URL" data-id="https://vi.wikipedia.org/wiki/R%C3%B2_r%E1%BB%89_b%E1%BB%99_nh%E1%BB%9B" rel="noreferrer noopener nofollow">memory leak</a>): setTimeout, setInterval, subscriptions.</li><li><strong>Không cần clean up</strong> (Vì những hàm này sau khi run sẽ tự động huỷ đi): thao tác với DOM, call API.</li></ul><p><a href="https://reactjs.org/docs/hooks-effect.html" target="_blank" type="URL" id="https://reactjs.org/docs/hooks-effect.html" rel="noreferrer noopener nofollow" class="broken_link">useEffect</a> cho phép chúng ta dễ dàng thao tác với các Side Effect này bên trong functional component. Đây có thể là một cách thay thế hiệu quả cho việc sử dụng <strong>lifecycle</strong> trong class component. Cú pháp chung như sau:</p><pre class="EnlighterJSRAW" data-enlighter-language="js" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">useEffect(callback, [dependencies]);
+
+// Ví dụ đầy đủ
+useEffect(()=>{
+  // do side effect ...
+
+  return () => {
+    // clean up
+  }
+}, [dependencies])</pre><p><strong>Một vài lưu ý:</strong></p><ul><li>useEffect lưu chạy trong lần đầu tiên sau khi đã render (hay component đã mount).</li><li>Nếu mảng <code>dependencies = []</code> thì useEffect chỉ chạy một lần duy nhất.</li><li>Nếu không truyền vào mảng dependencies (không truyền chứ không phải là [] nhé), thì useEffect luôn chạy lại sau mỗi lần render.</li><li>Nếu bất kỳ phần tử nào trong mảng dependencies thay đổi thì useEffect sẽ được chạy lại.</li><li>Hàm clean up chạy trước mỗi lẫn useEffect được chạy lại và sau khi component unmount. Và nhớ clean up đối với các case cần clean up ở trên để tránh memory leak.</li><li>useEffect như một sự kết hợp hoàn hảo của <code>componentDidMount, componentDidUpdate, componentWillUnmount</code>.</li><li>Bạn có thể dùng nhiều useEffect trong cùng một component. Và nên tách ra các useEffect xử lý các Side Effect khác nhau.</li><li>Có một case là khi bạn call API để lấy dữ liệu về render lại component, nhưng trước khi dữ liệu được lấy về thì component đã bị unmount (có thể do người dùng chuyển trang), việc này dẫn đến tình trạng memory leak. Một tip khắc phục như sau:</li></ul><pre class="EnlighterJSRAW" data-enlighter-language="js" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">useEffect(()=>{
+  let isSubscribe = true; // cờ báo hiệu component còn mount hay không?
+
+  (async function callAPI(){
+    const data = await getData();
+    if(isSubscribe &amp;&amp; data){
+       // chỉ re-render khi component chưa unmount
+       reRender(data);
+    }
+  })();
+
+  return () => {
+    isSubscribe = false; // tắt cờ này nếu component bị unmount hoặc re-render;
+  }
+}, [dependencies])</pre><h2 id="ftoc-heading-6" class="ftwp-heading">4. useMemo</h2><p><a href="https://reactjs.org/docs/hooks-reference.html#usememo" target="_blank" type="URL" id="https://reactjs.org/docs/hooks-reference.html#usememo" rel="noreferrer noopener nofollow" class="broken_link">useMemo</a> sử dụng kỹ thuật <strong>Memoization</strong> <strong>Caching</strong> giúp tối ưu hoá tốc độ và tiết kiệm bộ nhớ bằng việc ghi nhớ các kết quả đã được tính toán nếu cùng một đầu vào.</p><pre class="EnlighterJSRAW" data-enlighter-language="js" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">const memoizedValue = useMemo(() => {
+  // chạy một hàm tính toán phức tạp nào đó
+  return value;
+}), [dependencies]);</pre><p><strong>Một số lưu ý:</strong></p><ul><li>Hàm tính toán phức tạp đó sẽ chạy lại mỗi lần dependencies thay đổi.</li><li>useMemo chạy trong lúc rendering nên tránh sử dụng xử lý các Side Effects (hãy dùng useEffect cho TH này).</li><li>ĐỪNG dùng useMemo mà KHÔNG truyền vào dependencies nào vì đơn giản nó không còn ý nghĩa gì 😅</li><li>Tránh lạm dụng useMemo cho các tính toán không quá phức tạp, vì sẽ lãng phí bộ nhớ cho việc caching.</li></ul><h2 id="ftoc-heading-7" class="ftwp-heading">5. useCallback</h2><p><a href="https://reactjs.org/docs/hooks-reference.html#usecallback" target="_blank" type="URL" id="https://reactjs.org/docs/hooks-reference.html#usecallback" rel="noreferrer noopener nofollow" class="broken_link">useCallback</a> tương tự như useMemo nhưng nó dùng để ghi nhớ một <strong>hàm callback</strong>. Nó rất hữu dụng khi chúng ta truyền hàm này làm props cho một component nào đó render rất nặng. Vì đôi khi function chúng ta không hề thay đổi sau mỗi lần render nhưng vì function là giá trị tham chiếu nên nó luôn bị thay đổi dẫn đến component con bị re-render không cần thiết. useCallback sẽ giúp chúng ta khắc phục điều này.</p><pre class="EnlighterJSRAW" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">const memoizedCallback = useCallback(
+  () => {
+    // do something...
+  },
+  [dependencies],
+);
+
+// Có thể sử dụng useMemo như useCallback nếu useMemo trả về 1 function
+useCallback(fn, deps) = useMemo(() => fn, deps).</pre><h2 id="ftoc-heading-8" class="ftwp-heading">6. useContext và useReducer</h2><p><a href="https://reactjs.org/docs/hooks-reference.html#usecontext" target="_blank" type="URL" id="https://reactjs.org/docs/hooks-reference.html#usecontext" rel="noreferrer noopener nofollow" class="broken_link">useContext</a> giúp chúng ta sử dụng các biến context (global state) được tạo ra bởi <code>React.createContext</code>. Nó giúp việc sử dụng, chia sẻ các state giữa các component trở nên dễ dàng hơn. Cú pháp như sau:</p><pre class="EnlighterJSRAW" data-enlighter-language="js" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">const value = useContext(MyContext);</pre><p><a href="https://reactjs.org/docs/hooks-reference.html#usereducer" target="_blank" data-type="URL" data-id="https://reactjs.org/docs/hooks-reference.html#usereducer" rel="noreferrer noopener nofollow">useReducer </a>giúp chúng ta tạo nên một kho lưu trữ các <strong>state</strong> và thay đổi state đó thông qua hàm<strong> dispatch</strong> một <strong>action</strong> và dựa theo loại action truyền đến mà xử lý thích hợp, sau đó trả về một state mới. Nếu bạn đã làm việc với Redux thì concept nó tương tự như thế.</p><pre class="EnlighterJSRAW" data-enlighter-language="js" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">// reducer thường có dạng như vầy
+const reducer = (state, action) => {
+  const { type } = action;
+  switch(type){
+    case 'ABC':
+      return newState;
+    ...
+  }
+}
+
+const [state, dispatch] = useReducer(reducer, initialArg, init);</pre><p><strong>Một vài lưu ý</strong>:</p><ul><li>useContext chỉ sử dụng trong những component là con của biến <code>MyContext.Provider</code>.</li><li>useContext thích hợp cho việc quản lý các global state cho các ứng dụng nhỏ, không quá phức tạp.</li><li>Một vài thư viện có thể thay thế cho 2 hook trên như Redux, React Recoil, MobX, &#8230;</li></ul><h2 id="ftoc-heading-9" class="ftwp-heading">Ứng dụng demo</h2><iframe src="https://codesandbox.io/embed/react-hooks-60i6o?fontsize=14&amp;hidenavigation=1&amp;theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="React Hooks" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe><div class="dyno-ad-inside"> <script="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7867386097812429" crossorigin="anonymous" defer data-deferred="1"></script> <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7867386097812429" data-ad-slot="2271238951"></ins> <script src="data:text/javascript;base64,KGFkc2J5Z29vZ2xlPXdpbmRvdy5hZHNieWdvb2dsZXx8W10pLnB1c2goe30p" defer></script> </div><h2 id="ftoc-heading-10" class="ftwp-heading">Tạm kết</h2><p>Ở trên là các hook cơ bản nhất mà chúng ta nên biết khi làm việc với React Hooks. Ngoài ra vẫn còn một vài hooks khác như useLayoutEffect, useDebugValue, useImperativeHandle và bạn cũng có thể tự custom lại một hook, mình sẽ có bài viết nói về vấn đề này sau nhé 😎</p><p>Cảm ơn mọi người đã đọc bài viết này 😍</p><p><strong>Bạn có thể đọc thêm:</strong></p><ul><li><a href="https://dynonguyen.com/cach-deploy-website-len-internet/" target="_blank" data-type="URL" data-id="https://dynonguyen.com/cach-deploy-website-len-internet/" rel="noreferrer noopener">7 Cách deploy website lên internet</a></li><li><a href="https://dynonguyen.com/3-cach-xay-dung-dark-mode-cho-website/" target="_blank" data-type="URL" data-id="https://dynonguyen.com/3-cach-xay-dung-dark-mode-cho-website/" rel="noreferrer noopener">3 Cách xây dựng darkmode cho website</a></li><li><a href="https://dynonguyen.com/code-cung-dyno/pha-dao-hackerrank/interview-preparation-kit/" target="_blank" data-type="URL" data-id="https://dynonguyen.com/code-cung-dyno/pha-dao-hackerrank/interview-preparation-kit/" rel="noreferrer noopener">Phá đảo HackerRank &#8211; Interview Preparation Kit</a></li></ul> <script type="text/javascript" src="data:text/javascript;base64,alF1ZXJ5KGRvY3VtZW50KS5yZWFkeShmdW5jdGlvbigkKXskLnBvc3QoJ2h0dHBzOi8vZHlub25ndXllbi5jb20vd3AtYWRtaW4vYWRtaW4tYWpheC5waHAnLHthY3Rpb246J3dwdF92aWV3X2NvdW50JyxpZDonNzg5J30pfSk=" defer></script></div></div><div class="shareit shareit-circular circular bottom">
+<a href="//www.facebook.com/share.php?m2w&s=100&p[url]=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F&p[images][0]=h&p[title]=Nh%E1%BB%AFng+React+Hooks+hay+d%C3%B9ng+nh%E1%BA%A5t+trong+ReactJS&u=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F&t=Nh%E1%BB%AFng+React+Hooks+hay+d%C3%B9ng+nh%E1%BA%A5t+trong+ReactJS" class="facebooksharebtn" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><span class="social-icon"><i class="fa fa-facebook-official"></i></span></a>
+<a href="//www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F&title=Những React Hooks hay dùng nhất trong ReactJS&source=url" class="linkedinbtn" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><span class="social-icon"><i class="fa fa-linkedin"></i></span><span class="social-text">Share</span></a>
+<a href="javascript:window.open('https://telegram.me/share/url?url='+encodeURIComponent(window.location.href), '_blank')" class="telegram"><span class="social-icon"><i class="fa fa-paper-plane"></i></span></a>
+<a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F&text=Những React Hooks hay dùng nhất trong ReactJS&url=https%3A%2F%2Fdynonguyen.com%2Fnhung-react-hook-hay-dung-nhat-trong-reactjs%2F&via=TunNguy7352284" class="twitterbutton" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><span class="social-icon"><i class="fa fa-twitter"></i></span></a></div></div></div><div class="tags"><a href="https://dynonguyen.com/tag/series-ve-javascript/" rel="tag">JavaScript</a><a href="https://dynonguyen.com/tag/reactjs/" rel="tag">reactjs</a><a href="https://dynonguyen.com/tag/series-javascript/" rel="tag">Series về JavaScript</a></div><div class="postauthor"><img alt='' src='https://dynonguyen.com/wp-content/litespeed/avatar/abb2c882bc33ab359f74492f1146f9a9.jpg' srcset='https://dynonguyen.com/wp-content/litespeed/avatar/ef2653baf2451834843f5685a93f91ac.jpg 2x' class='avatar avatar-125 photo' height='125' width='125' loading='lazy'/><div class="postauthor-wrapper"><h5 class="vcard author">
+<a href="https://dynonguyen.com/tac-gia/dyno-nguyen/" class="fn">
+Dyno Nguyễn					</a></h5><p>Howdy ! Mình là Tuấn, mọi người có thể gọi mình là Dyno Nguyễn. Mình hiện tại đang là một Frontend Developer và tập tành viết blog 🐣</p></div></div><div class="related-posts related2 position-default "><div class="related-posts-title"><h4>Bài viết liên quan</h4></div><div class="related-posts-container clear"><article class="latestPost excerpt flex-grid default">
+<a href="https://dynonguyen.com/upload-anh-len-cloudinary-voi-javascript/" title="Upload ảnh lên Cloudinary với JavaScript" id="featured-thumbnail"><div class="featured-thumbnail">
+<img width="250" height="220" src="https://dynonguyen.com/wp-content/uploads/2021/10/upload-anh-len-cloudinary-1-250x220.jpg" class="attachment-scribbler-layout-1 size-scribbler-layout-1 wp-post-image" alt="Upload ảnh lên Cloudinary với JavaScript" loading="lazy" title="Upload ảnh lên Cloudinary với JavaScript" srcset="https://dynonguyen.com/wp-content/uploads/2021/10/upload-anh-len-cloudinary-1-250x220.jpg 250w, https://dynonguyen.com/wp-content/uploads/2021/10/upload-anh-len-cloudinary-1-500x440.jpg 500w" sizes="(max-width: 250px) 100vw, 250px" /></div>
+</a><div class="wrapper"><header><div class="post-info">
+<span class="theauthor"> <span><a href="https://dynonguyen.com/tac-gia/dyno-nguyen/" title="Đăng bởi Dyno Nguyễn" rel="author">Dyno Nguyễn</a></span></span><span class="thetime date updated"> <span>24/10/2021</span></span></div><h2 class="title front-view-title"><a href="https://dynonguyen.com/upload-anh-len-cloudinary-voi-javascript/" title="Upload ảnh lên Cloudinary với JavaScript">Upload ảnh lên Cloudinary với JavaScript</a></h2></header><div class="front-view-content">
+Hình ảnh là một thứ gần như không thể thiếu với hầu hết các website hiện nay. Với những trang web có vài bức&nbsp;&hellip;</div></div></article><article class="latestPost excerpt flex-grid default">
+<a href="https://dynonguyen.com/cac-tinh-nang-tuyet-voi-cua-react-hook-form/" title="React Hook Form &#8211; Giải pháp quản lý form cho ReactJS" id="featured-thumbnail"><div class="featured-thumbnail">
+<img width="250" height="220" src="https://dynonguyen.com/wp-content/uploads/2021/08/dynonguyen-react-hook-form-250x220.jpg" class="attachment-scribbler-layout-1 size-scribbler-layout-1 wp-post-image" alt="React Hook Form &#8211; Giải pháp quản lý form cho ReactJS" loading="lazy" title="React Hook Form &#8211; Giải pháp quản lý form cho ReactJS" srcset="https://dynonguyen.com/wp-content/uploads/2021/08/dynonguyen-react-hook-form-250x220.jpg 250w, https://dynonguyen.com/wp-content/uploads/2021/08/dynonguyen-react-hook-form-500x440.jpg 500w" sizes="(max-width: 250px) 100vw, 250px" /></div>
+</a><div class="wrapper"><header><div class="post-info">
+<span class="theauthor"> <span><a href="https://dynonguyen.com/tac-gia/dyno-nguyen/" title="Đăng bởi Dyno Nguyễn" rel="author">Dyno Nguyễn</a></span></span><span class="thetime date updated"> <span>30/08/2021</span></span></div><h2 class="title front-view-title"><a href="https://dynonguyen.com/cac-tinh-nang-tuyet-voi-cua-react-hook-form/" title="React Hook Form &#8211; Giải pháp quản lý form cho ReactJS">React Hook Form &#8211; Giải pháp quản lý form cho ReactJS</a></h2></header><div class="front-view-content">
+Khi làm việc với ReactJS chắc hẳn bạn đã từng đau đầu với việc quản lý form sao cho hiệu quả. Form validation là&nbsp;&hellip;</div></div></article><article class="latestPost excerpt flex-grid default">
+<a href="https://dynonguyen.com/huong-dan-viet-custom-hooks-trong-reactjs/" title="Hướng dẫn viết Custom Hooks trong ReactJS" id="featured-thumbnail"><div class="featured-thumbnail">
+<img width="250" height="220" src="https://dynonguyen.com/wp-content/uploads/2021/09/custom-react-hooks-250x220.jpg" class="attachment-scribbler-layout-1 size-scribbler-layout-1 wp-post-image" alt="Hướng dẫn viết Custom Hooks trong ReactJS" loading="lazy" title="Hướng dẫn viết Custom Hooks trong ReactJS" srcset="https://dynonguyen.com/wp-content/uploads/2021/09/custom-react-hooks-250x220.jpg 250w, https://dynonguyen.com/wp-content/uploads/2021/09/custom-react-hooks-500x440.jpg 500w" sizes="(max-width: 250px) 100vw, 250px" /></div>
+</a><div class="wrapper"><header><div class="post-info">
+<span class="theauthor"> <span><a href="https://dynonguyen.com/tac-gia/dyno-nguyen/" title="Đăng bởi Dyno Nguyễn" rel="author">Dyno Nguyễn</a></span></span><span class="thetime date updated"> <span>21/09/2021</span></span></div><h2 class="title front-view-title"><a href="https://dynonguyen.com/huong-dan-viet-custom-hooks-trong-reactjs/" title="Hướng dẫn viết Custom Hooks trong ReactJS">Hướng dẫn viết Custom Hooks trong ReactJS</a></h2></header><div class="front-view-content">
+Trong ReactJS, ngoài những Hooks quen thuộc như useState(), useEffect(), useRef(), &#8230; Thì React còn cho phép chúng ta tự tạo ra một custom&nbsp;&hellip;</div></div></article></div></div></div><div id="comments"><div class="comment-title"><h4 class="total-comments">2 Comments</h4></div><ol class="commentlist clearfix"><li class="comment byuser comment-author-tuandyno bypostauthor even thread-even depth-1" id="li-comment-20"><div id="comment-20" itemscope itemtype="http://schema.org/UserComments"><div class="comment-author vcard">
+<img alt='' src='https://dynonguyen.com/wp-content/litespeed/avatar/b5f30668c837cc78c2005c7e21e0b9c9.jpg' srcset='https://dynonguyen.com/wp-content/litespeed/avatar/585b5ca91d870c77301e4927dc04b041.jpg 2x' class='avatar avatar-92 photo' height='92' width='92' loading='lazy'/>							<span class="fn" itemprop="creator" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="https://dynonguyen.com" rel="external nofollow ugc" class="url">Dyno Nguyễn</a></span></span>															<span class="ago">24/08/2021</span>
+<span class="comment-meta">
+</span><div class="reply">
+<a rel='nofollow' class='comment-reply-link' href='#comment-20' data-commentid="20" data-postid="789" data-belowelement="comment-20" data-respondelement="respond" data-replyto="Phản hồi đến Dyno Nguyễn" aria-label='Phản hồi đến Dyno Nguyễn'>Trả lời</a></div></div><div class="commentmetadata"><div class="commenttext" itemprop="commentText"><p>Cảm ơn bạn Hịn nhiều. Nhớ theo dõi mình để đọc thêm những bài viết khác nhé 😘</p></div></div></div></li><li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-19"><div id="comment-19" itemscope itemtype="http://schema.org/UserComments"><div class="comment-author vcard">
+<img alt='' src='https://dynonguyen.com/wp-content/litespeed/avatar/cfaf46d9e35ed03f2a2c7b1d2eafddd2.jpg' srcset='https://dynonguyen.com/wp-content/litespeed/avatar/81a61dfa81662239ae6e6083b31e4867.jpg 2x' class='avatar avatar-92 photo' height='92' width='92' loading='lazy'/>							<span class="fn" itemprop="creator" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Hịn Hịn</span></span>															<span class="ago">24/08/2021</span>
+<span class="comment-meta">
+</span><div class="reply">
+<a rel='nofollow' class='comment-reply-link' href='#comment-19' data-commentid="19" data-postid="789" data-belowelement="comment-19" data-respondelement="respond" data-replyto="Phản hồi đến Hịn Hịn" aria-label='Phản hồi đến Hịn Hịn'>Trả lời</a></div></div><div class="commentmetadata"><div class="commenttext" itemprop="commentText"><p>cám ơn bài viết bổ ích của bạn nhe:3</p></div></div></div></li></ol></div><div id="commentsAdd"><div id="respond" class="box m-t-6"><div id="respond" class="comment-respond"><h3 id="reply-title" class="comment-reply-title">Give a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/nhung-react-hook-hay-dung-nhat-trong-reactjs/#respond" style="display:none;">Cancel Reply</a></small></h3><form action="https://dynonguyen.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="6" aria-required="true" placeholder="Your Message*"></textarea></p><p class="comment-form-author"><input id="author" name="author" aria-required="true" placeholder="Your Name*"></input></p><p class="comment-form-email"><input id="email" name="email" placeholder="Email Address*"></input></p><p class="comment-form-url"><input id="url" name="url" placeholder="Website"></input></p><p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Lưu tên của tôi, email, và trang web trong trình duyệt này cho lần bình luận kế tiếp của tôi.</label></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Submit" /> <input type='hidden' name='comment_post_ID' value='789' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' /></p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="82af22160f" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="118"/><script src="data:text/javascript;base64,ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImFrX2pzXzEiKS5zZXRBdHRyaWJ1dGUoInZhbHVlIiwobmV3IERhdGUoKSkuZ2V0VGltZSgpKQ==" defer></script></p></form></div></div></div></div></article><aside id="sidebar" class="sidebar c-4-12 mts-sidebar-sidebar" role="complementary" itemscope itemtype="http://schema.org/WPSideBar"><div id="block-23" class="widget widget_block widget_search"><form role="search" method="get" action="https://dynonguyen.com/" class="wp-block-search__button-inside wp-block-search__icon-button wp-block-search"><label for="wp-block-search__input-1" class="wp-block-search__label screen-reader-text">Search</label><div class="wp-block-search__inside-wrapper " ><input type="search" id="wp-block-search__input-1" class="wp-block-search__input " name="s" value="" placeholder="Tìm mọi thứ bạn cần"  required /><button type="submit" class="wp-block-search__button  has-icon" ><svg id="search-icon" class="search-icon" viewBox="0 0 24 24" width="24" height="24">
+<path d="M13.5 6C10.5 6 8 8.5 8 11.5c0 1.1.3 2.1.9 3l-3.4 3 1 1.1 3.4-2.9c1 .9 2.2 1.4 3.6 1.4 3 0 5.5-2.5 5.5-5.5C19 8.5 16.5 6 13.5 6zm0 9.5c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"></path>
+</svg></button></div></form></div><div id="mts_aboutme_widget-5" class="widget widget_mts_aboutme_widget two-grid"><div class="aboutme-widget clearfix"><div class="aboutme-image"><img src="https://res.cloudinary.com/tuan-cloudinary/image/upload/w_150/v1627518043/avt.jpg" /></div><div class="author-name"><h4>Dyno Nguyễn</h4></div><div class="author-profession"><p>Author</p></div><div class="aboutme-description"><p>Mình là Tuấn, mọi người có thể gọi mình là Dyno. Một cậu bé đang tập tành viết Blog 🐣</p></div></div></div><style>#mts_aboutme_widget-5 .aboutme-image img {
+				width: 150px;
+				border-radius: 50%;
+			}
+			?></style><div id="social-profile-icons-5" class="widget social-profile-icons"><div class="social-profile-icons social-column"><ul class=""><li class="social-facebook"><a title="Facebook" href="https://www.facebook.com/dynonguyenblog" ><span class="widget-social-text">Facebook</span><span class="widget-social-icon"><i class="fa fa-facebook-official"></i></span></a></li></ul></div></div><style>#social-profile-icons-5 .social-profile-icons .widget-social-text { font-size: 24px }
+				#social-profile-icons-5 .social-profile-icons .widget-social-icon { font-size: 110px }
+				#social-profile-icons-5 .social-profile-icons ul li a {
+					color: #e4ebff!important;
+					background: #3b5998;
+					border-radius: 12px;
+					padding-top: 28px;
+					padding-right: 0px;
+					padding-bottom: 28px;
+					padding-left: 30px;
+				}
+				#social-profile-icons-5 .social-profile-icons.social-column .widget-social-icon {
+					top: -15px;
+					right: 5px;
+				}
+								#social-profile-icons-5 .social-profile-icons .social-facebook a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-facebook a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-behance a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-behance a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-flickr a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-flickr a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-pinterest a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-pinterest a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-instagram a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-instagram a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-dribbble a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-dribbble a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-linkedin a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-linkedin a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-soundcloud a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-soundcloud a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-twitter a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-twitter a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-vimeo a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-vimeo a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-stumbleupon a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-stumbleupon a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-tumblr a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-tumblr a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-github a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-github a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-youtube a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-youtube a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-foursquare a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-foursquare a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-reddit a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-reddit a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-dropbox a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-dropbox a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-skype a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-skype a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-email a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-email a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-5 .social-profile-icons .social-rss a { color: !important; background: ; }#social-profile-icons-5 .social-profile-icons .social-rss a:hover { color: !important; background: ; border-color: ; }</style><div id="wpt_widget-8" class="widget widget_wpt"><div id="wpt_widget-8_content" data-widget-number="8" class="wpt_widget_content wpt-load8" data-style="" data-pagination-style=""><div class="wpt-loader"></div><ul class="wpt-tabs has-3-tabs"><li class="tab_title">
+<a href="#" id="latest-1-tab">
+<i class="fa fa-bell"></i> Latest				</a></li><li class="tab_title">
+<a href="#" id="cats-3-tab">
+<i class="fa fa-bars"></i> Categories				</a></li><li class="tab_title">
+<a href="#" id="tags-8-tab">
+<i class="fa fa-tags"></i> Tags				</a></li></ul><div class="clear"></div><div class="inside"><div class="wpt_acc_title">
+<a href="#" id="latest-1-tab">
+<i class="fa fa-bell"></i> Latest				</a></div><div id="latest-1-tab-content" class="tab-content"></div><div class="wpt_acc_title">
+<a href="#" id="cats-3-tab">
+<i class="fa fa-bars"></i> Categories				</a></div><div id="cats-3-tab-content" class="tab-content"></div><div class="wpt_acc_title">
+<a href="#" id="tags-8-tab">
+<i class="fa fa-tags"></i> Tags				</a></div><div id="tags-8-tab-content" class="tab-content"></div><div class="clear"></div></div><div class="clear"></div></div></div><div id="block-41" class="widget widget_block"><div class="wp-container-622dba040a7ba wp-block-group"><div class="wp-block-group__inner-container"><h2>Lưu trữ</h2><ul class=" wp-block-archives-list aligncenter wp-block-archives"><li><a href='https://dynonguyen.com/2022/02/'>Tháng Hai 2022</a></li><li><a href='https://dynonguyen.com/2021/11/'>Tháng Mười Một 2021</a></li><li><a href='https://dynonguyen.com/2021/10/'>Tháng Mười 2021</a></li><li><a href='https://dynonguyen.com/2021/09/'>Tháng Chín 2021</a></li><li><a href='https://dynonguyen.com/2021/08/'>Tháng Tám 2021</a></li><li><a href='https://dynonguyen.com/2021/07/'>Tháng Bảy 2021</a></li></ul></div></div></div></aside></div><div class="footer-ad clearfix"><div class="container"><div class="dyno-ad-before-footer"> <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7867386097812429"
+     crossorigin="anonymous" defer data-deferred="1"></script> <ins class="adsbygoogle"
+style="display:block; text-align:center;"
+data-ad-layout="in-article"
+data-ad-format="fluid"
+data-ad-client="ca-pub-7867386097812429"
+data-ad-slot="8272157631"></ins> <script src="data:text/javascript;base64,KGFkc2J5Z29vZ2xlPXdpbmRvdy5hZHNieWdvb2dsZXx8W10pLnB1c2goe30p" defer></script> </div></div></div></div><footer id="site-footer" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter"><div class="container"><div class="footer-widgets first-footer-widgets widgets-num-4"><div class="f-widget f-widget-1 first"><div id="social-profile-icons-3" class="widget social-profile-icons"><h3 class="widget-title">Theo dõi mình tại</h3><div class="social-profile-icons social-column"><ul class=""><li class="social-facebook"><a title="Facebook" href="https://www.facebook.com/TuanNguyen250400" ><span class="widget-social-text">Facebook</span><span class="widget-social-icon"><i class="fa fa-facebook-official"></i></span></a></li><li class="social-linkedin"><a title="LinkedIn" href="https://www.linkedin.com/in/nlatuan/" ><span class="widget-social-text">LinkedIn</span><span class="widget-social-icon"><i class="fa fa-linkedin"></i></span></a></li><li class="social-github"><a title="GitHub" href="https://github.com/TuanNguyen2504" ><span class="widget-social-text">GitHub</span><span class="widget-social-icon"><i class="fa fa-github-alt"></i></span></a></li></ul></div></div><style>#social-profile-icons-3 .social-profile-icons .widget-social-text { font-size: 18px }
+				#social-profile-icons-3 .social-profile-icons .widget-social-icon { font-size: 110px }
+				#social-profile-icons-3 .social-profile-icons ul li a {
+					color: #e4ebff!important;
+					background: ;
+					border-radius: 12px;
+					padding-top: 18px;
+					padding-right: 32px;
+					padding-bottom: 18px;
+					padding-left: 32px;
+				}
+				#social-profile-icons-3 .social-profile-icons.social-column .widget-social-icon {
+					top: -15px;
+					right: 5px;
+				}
+								#social-profile-icons-3 .social-profile-icons .social-facebook a { color: !important; background: #3b5998; }#social-profile-icons-3 .social-profile-icons .social-facebook a:hover { color: !important; background: #2d4577; border-color: #2d4577; }#social-profile-icons-3 .social-profile-icons .social-behance a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-behance a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-flickr a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-flickr a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-pinterest a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-pinterest a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-instagram a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-instagram a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-dribbble a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-dribbble a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-linkedin a { color: !important; background: #0e78a8; }#social-profile-icons-3 .social-profile-icons .social-linkedin a:hover { color: !important; background: #074c84; border-color: #074c84; }#social-profile-icons-3 .social-profile-icons .social-soundcloud a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-soundcloud a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-twitter a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-twitter a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-vimeo a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-vimeo a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-stumbleupon a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-stumbleupon a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-tumblr a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-tumblr a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-github a { color: !important; background: #171515; }#social-profile-icons-3 .social-profile-icons .social-github a:hover { color: !important; background: #0f0e0e; border-color: #0f0e0e; }#social-profile-icons-3 .social-profile-icons .social-youtube a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-youtube a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-foursquare a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-foursquare a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-reddit a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-reddit a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-dropbox a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-dropbox a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-skype a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-skype a:hover { color: !important; background: ; border-color: ; }#social-profile-icons-3 .social-profile-icons .social-email a { color: !important; background: #e36156; }#social-profile-icons-3 .social-profile-icons .social-email a:hover { color: !important; background: #ba4646; border-color: #ba4646; }#social-profile-icons-3 .social-profile-icons .social-rss a { color: !important; background: ; }#social-profile-icons-3 .social-profile-icons .social-rss a:hover { color: !important; background: ; border-color: ; }</style></div><div class="f-widget f-widget-2"><div id="mts_recent_posts_widget-3" class="widget widget_mts_recent_posts_widget horizontal-small"><h3 class="widget-title">Bài viết gần đây</h3><ul class="advanced-recent-posts"><li class="post-box horizontal-small horizontal-container"><div class="horizontal-container-inner"><div class="post-img">
+<a href="https://dynonguyen.com/vim-la-gi/" title="Tập 1: Vim là gì ? Tại sao mình chọn Vim ?">
+<img width="72" height="72" src="https://dynonguyen.com/wp-content/uploads/2021/11/vim-la-gi-72x72.jpg" class="attachment-scribbler-widgetthumb size-scribbler-widgetthumb wp-post-image" alt="Tập 1: Vim là gì ? Tại sao mình chọn Vim ?" loading="lazy" title="Tập 1: Vim là gì ? Tại sao mình chọn Vim ?" />						</a></div><div class="post-data"><div class="post-data-container"><div class="post-title">
+<a href="https://dynonguyen.com/vim-la-gi/" title="Tập 1: Vim là gì ? Tại sao mình chọn Vim ?">Tập 1: Vim là gì&nbsp;&hellip;</a></div></div></div></div></li><li class="post-box horizontal-small horizontal-container"><div class="horizontal-container-inner"><div class="post-img">
+<a href="https://dynonguyen.com/huong-dan-dung-dyno-file-utils-vscode-extension/" title="Hướng dẫn sử dụng Dyno File Utils &#8211; VSCode Extension">
+<img width="72" height="72" src="https://dynonguyen.com/wp-content/uploads/2021/11/dyno-file-utils-72x72.jpg" class="attachment-scribbler-widgetthumb size-scribbler-widgetthumb wp-post-image" alt="Hướng dẫn sử dụng Dyno File Utils &#8211; VSCode Extension" loading="lazy" title="Hướng dẫn sử dụng Dyno File Utils &#8211; VSCode Extension" />						</a></div><div class="post-data"><div class="post-data-container"><div class="post-title">
+<a href="https://dynonguyen.com/huong-dan-dung-dyno-file-utils-vscode-extension/" title="Hướng dẫn sử dụng Dyno File Utils &#8211; VSCode Extension">Hướng dẫn sử dụng Dyno&nbsp;&hellip;</a></div></div></div></div></li><li class="post-box horizontal-small horizontal-container"><div class="horizontal-container-inner"><div class="post-img">
+<a href="https://dynonguyen.com/upload-anh-len-cloudinary-voi-javascript/" title="Upload ảnh lên Cloudinary với JavaScript">
+<img width="72" height="72" src="https://dynonguyen.com/wp-content/uploads/2021/10/upload-anh-len-cloudinary-1-72x72.jpg" class="attachment-scribbler-widgetthumb size-scribbler-widgetthumb wp-post-image" alt="Upload ảnh lên Cloudinary với JavaScript" loading="lazy" title="Upload ảnh lên Cloudinary với JavaScript" />						</a></div><div class="post-data"><div class="post-data-container"><div class="post-title">
+<a href="https://dynonguyen.com/upload-anh-len-cloudinary-voi-javascript/" title="Upload ảnh lên Cloudinary với JavaScript">Upload ảnh lên Cloudinary với&nbsp;&hellip;</a></div></div></div></div></li></ul><style>#mts_recent_posts_widget-3 .horizontal-small img { border-radius:10px }</style></div></div><div class="f-widget f-widget-3"><div id="block-34" class="widget widget_block"><div class="wp-container-622dba040d903 wp-block-group"><div class="wp-block-group__inner-container"><div class="wp-container-622dba040d585 wp-block-group"><div class="wp-block-group__inner-container"><h3>Blog bạn bè</h3><ul><li><a rel="noreferrer noopener" href="https://kienthucthuvi.net/" data-type="URL" data-id="https://kienthucthuvi.net/" target="_blank">Giang PC</a></li><li><a href="https://vinmaize.com/" data-type="URL" data-id="https://vinmaize.com/" target="_blank" rel="noreferrer noopener">Vinee</a></li></ul></div></div><p></p></div></div></div></div><div class="f-widget f-widget-4 last"><div id="facebook-like-widget-3" class="widget facebook_like"><h3 class="widget-title">Fanpage</h3><div class="fb-page" data-href="https://www.facebook.com/dynonguyenblog/" data-width="" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"></div></div></div></div></div><div class="copyrights"><div class="container"><div class="row" id="copyright-note">
+<span>&copy; 2022 the <a href=" https://dynonguyen.com/" title=" Nơi chia sẻ các kiến thức về công nghệ và lập trình một cách đơn giản nhất - Keep It Simple, Stupid !">Dyno Nguyễn</a>, </span><div class="to-top"><a href="https://dynonguyen.com/dieu-khoan-ban-quyen" target="_blank"> Điều khoản và Bản quyền</a></div></div><div class="footer-nav-container"><nav class="footer-nav"></nav></div></div></div></footer></div><style type="text/css" media="screen">.is-menu path.search-icon-path { fill: #3f4351;}body .popup-search-close:after, body .search-close:after { border-color: #3f4351;}body .popup-search-close:before, body .search-close:before { border-color: #3f4351;}</style><!--[if lte IE 9]> <script>(function($) {
+					$(document).ready(function() {
+						$( '#ftwp-container' ).addClass( 'ftwp-ie9' );
+					});
+				})(jQuery);</script> <![endif]--><style>.wp-container-622dba040a7ba .alignleft { float: left; margin-right: 2em; }.wp-container-622dba040a7ba .alignright { float: right; margin-left: 2em; }</style><style>.wp-container-622dba040d585 .alignleft { float: left; margin-right: 2em; }.wp-container-622dba040d585 .alignright { float: right; margin-left: 2em; }</style><style>.wp-container-622dba040d903 .alignleft { float: left; margin-right: 2em; }.wp-container-622dba040d903 .alignright { float: right; margin-left: 2em; }</style><link rel='stylesheet' id='wpt_font_awesome-css'  href='https://dynonguyen.com/wp-content/plugins/wp-tab-widget-pro/css/font-awesome.min.css' type='text/css' media='all' /><link rel='stylesheet' id='wpt_widget_pro-css'  href='https://dynonguyen.com/wp-content/plugins/wp-tab-widget-pro/css/wp-tab-widget-pro.css' type='text/css' media='all' /> <script type='text/javascript' src='https://dynonguyen.com/wp-includes/js/comment-reply.min.js' id='comment-reply-js' defer data-deferred="1"></script> <script type='text/javascript' id='scribbler_customscript-js-extra' src="data:text/javascript;base64,dmFyIHNjcmliYmxlcl9jdXN0b21zY3JpcHQ9eyJuYXZfbWVudSI6InByaW1hcnkiLCJyZXNwb25zaXZlIjoiMSIsImxheW91dCI6ImhlYWRlci1kZWZhdWx0Iiwic2hvdyI6IjEiLCJpY29uIjoiYXJyb3ctdXAifQ==" defer></script> <script type='text/javascript' src='https://dynonguyen.com/wp-content/themes/mts_scribbler/js/scribbler-customscripts.js' id='scribbler_customscript-js' defer data-deferred="1"></script> <script type='text/javascript' src='https://dynonguyen.com/wp-content/themes/mts_scribbler/js/sticky.js' id='StickyNav-js' defer data-deferred="1"></script> <script type='text/javascript' id='scribbler-ajax-js-extra' src="data:text/javascript;base64,dmFyIHNjcmliYmxlcl9hamF4X3NlYXJjaD17InVybCI6Imh0dHBzOlwvXC9keW5vbmd1eWVuLmNvbVwvd3AtYWRtaW5cL2FkbWluLWFqYXgucGhwIiwiYWpheF9zZWFyY2giOiIxIn0=" defer></script> <script type='text/javascript' src='https://dynonguyen.com/wp-content/themes/mts_scribbler/js/ajax.js' id='scribbler-ajax-js' defer data-deferred="1"></script> <script type='text/javascript' src='https://dynonguyen.com/wp-content/plugins/litespeed-cache/assets/js/instant_click.min.js' id='litespeed-cache-js'></script> <script type='text/javascript' id='fixedtoc-js-js-extra' src="data:text/javascript;base64,dmFyIGZpeGVkdG9jT3B0aW9uPXsic2hvd0FkbWluYmFyIjoiIiwiaW5PdXRFZmZlY3QiOiJ6b29tIiwiaXNOZXN0ZWRMaXN0IjoiMSIsImlzQ29sRXhwTGlzdCI6IjEiLCJzaG93Q29sRXhwSWNvbiI6IjEiLCJpc0FjY29yZGlvbkxpc3QiOiIiLCJpc1F1aWNrTWluIjoiMSIsImlzRXNjTWluIjoiMSIsImlzRW50ZXJNYXgiOiIxIiwiZml4ZWRNZW51IjoiIiwic2Nyb2xsT2Zmc2V0IjoiMTAiLCJmaXhlZE9mZnNldFgiOiIzMCIsImZpeGVkT2Zmc2V0WSI6IjAiLCJmaXhlZFBvc2l0aW9uIjoibWlkZGxlLXJpZ2h0IiwiY29udGVudHNGaXhlZEhlaWdodCI6IjY1MCIsImluUG9zdCI6IjEiLCJjb250ZW50c0Zsb2F0SW5Qb3N0IjoibGVmdCIsImNvbnRlbnRzV2lkdGhJblBvc3QiOiIwIiwiY29udGVudHNIZWlnaHRJblBvc3QiOiIiLCJpbldpZGdldCI6IiIsImZpeGVkV2lkZ2V0IjoiIiwidHJpZ2dlckJvcmRlciI6InRoaW4iLCJjb250ZW50c0JvcmRlciI6InRoaW4iLCJ0cmlnZ2VyU2l6ZSI6IjQyIiwiZGVidWciOiIwIiwiY29udGVudHNDb2xleHBJbml0IjoiIn0=" defer></script> <script type='text/javascript' src='https://dynonguyen.com/wp-content/plugins/fixed-toc/frontend/assets/js/ftoc.min.js' id='fixedtoc-js-js' defer data-deferred="1"></script> <script type='text/javascript' src='https://dynonguyen.com/wp-content/plugins/enlighter/cache/enlighterjs.min.js' id='enlighterjs-js' defer data-deferred="1"></script> <script type='text/javascript' id='enlighterjs-js-after' src="data:text/javascript;base64,IWZ1bmN0aW9uKGUsbil7aWYoInVuZGVmaW5lZCIhPXR5cGVvZiBFbmxpZ2h0ZXJKUyl7dmFyIG89eyJzZWxlY3RvcnMiOnsiYmxvY2siOiJwcmUuRW5saWdodGVySlNSQVciLCJpbmxpbmUiOiJjb2RlLkVubGlnaHRlckpTUkFXIn0sIm9wdGlvbnMiOnsiaW5kZW50IjoyLCJhbXBlcnNhbmRDbGVhbnVwIjohMCwibGluZWhvdmVyIjohMSwicmF3Y29kZURiY2xpY2siOiExLCJ0ZXh0T3ZlcmZsb3ciOiJicmVhayIsImxpbmVudW1iZXJzIjohMSwidGhlbWUiOiJkcmFjdWxhIiwibGFuZ3VhZ2UiOiJnZW5lcmljIiwicmV0YWluQ3NzQ2xhc3NlcyI6ITEsImNvbGxhcHNlIjohMSwidG9vbGJhck91dGVyIjoiIiwidG9vbGJhclRvcCI6IntCVE5fUkFXfXtCVE5fQ09QWX17QlROX1dJTkRPV317QlROX1dFQlNJVEV9IiwidG9vbGJhckJvdHRvbSI6IiJ9fTsoZS5FbmxpZ2h0ZXJKU0lOSVQ9ZnVuY3Rpb24oKXtFbmxpZ2h0ZXJKUy5pbml0KG8uc2VsZWN0b3JzLmJsb2NrLG8uc2VsZWN0b3JzLmlubGluZSxvLm9wdGlvbnMpfSkoKX1lbHNleyhuJiYobi5lcnJvcnx8bi5sb2cpfHxmdW5jdGlvbigpe30pKCJFcnJvcjogRW5saWdodGVySlMgcmVzb3VyY2VzIG5vdCBsb2FkZWQgeWV0ISIpfX0od2luZG93LGNvbnNvbGUp" defer></script> <script type='text/javascript' id='ivory-search-scripts-js-extra' src="data:text/javascript;base64,dmFyIEl2b3J5U2VhcmNoVmFycz17ImlzX2FuYWx5dGljc19lbmFibGVkIjoiMSJ9" defer></script> <script type='text/javascript' src='https://dynonguyen.com/wp-content/plugins/add-search-to-menu/public/js/ivory-search.min.js' id='ivory-search-scripts-js' defer data-deferred="1"></script> <script type='text/javascript' id='wpt_widget-js-extra' src="data:text/javascript;base64,dmFyIHdwdD17ImFqYXhfdXJsIjoiaHR0cHM6XC9cL2R5bm9uZ3V5ZW4uY29tXC93cC1hZG1pblwvYWRtaW4tYWpheC5waHAifQ==" defer></script> <script type='text/javascript' src='https://dynonguyen.com/wp-content/plugins/wp-tab-widget-pro/js/wp-tab-widget.js' id='wpt_widget-js' defer data-deferred="1"></script> </body></html>
+<!-- Page optimized by LiteSpeed Cache @2022-03-13 09:31:48 -->
+<!-- Page generated by LiteSpeed Cache 4.4.7 on 2022-03-13 16:31:48 -->
