@@ -1,13 +1,15 @@
 import { useState, useRef, useContext } from "react";
+import { useHistory } from "react-router-dom";
 
-import { AuthContext } from "../../store/auth-context";
+import AuthContext from "../../store/auth-context";
 import classes from "./AuthForm.module.css";
 
 const AuthForm = () => {
-  const authCtx = useContext(AuthContext);
-
+  const history = useHistory();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+
+  const authCtx = useContext(AuthContext);
 
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -22,8 +24,9 @@ const AuthForm = () => {
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
 
-    setIsLoading(true);
+    // optional: Add validation
 
+    setIsLoading(true);
     let url;
     if (isLogin) {
       url =
@@ -32,7 +35,6 @@ const AuthForm = () => {
       url =
         "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAz3tkO67PYKvEkBPb_3Fw80eGh6dcGG6g";
     }
-
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
@@ -40,20 +42,17 @@ const AuthForm = () => {
         password: enteredPassword,
         returnSecureToken: true,
       }),
-      header: {
+      headers: {
         "Content-Type": "application/json",
       },
     })
       .then((res) => {
         setIsLoading(false);
-
         if (res.ok) {
           return res.json();
         } else {
-          res.json().then((data) => {
-            // console.log(data);
-            let errorMessage = "Auth failed";
-
+          return res.json().then((data) => {
+            let errorMessage = "Authentication failed!";
             // if (data && data.error && data.error.message) {
             //   errorMessage = data.error.message;
             // }
@@ -63,8 +62,11 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        // console.log(data);
-        authCtx.login(data.idToken);
+        const expirationTime = new Date(
+          new Date().getTime() + +data.expiresIn * 1000
+        );
+        authCtx.login(data.idToken, expirationTime.toISOString());
+        history.replace("/");
       })
       .catch((err) => {
         alert(err.message);
@@ -74,7 +76,6 @@ const AuthForm = () => {
   return (
     <section className={classes.auth}>
       <h1>{isLogin ? "Login" : "Sign Up"}</h1>
-
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor="email">Your Email</label>
@@ -89,16 +90,11 @@ const AuthForm = () => {
             ref={passwordInputRef}
           />
         </div>
-
         <div className={classes.actions}>
-          {/* https://stackoverflow.com/questions/9824808/disable-form-auto-submit-on-button-click */}
           {!isLoading && (
-            <button type="submit">
-              {isLogin ? "Login" : "Create Account"}
-            </button>
+            <button>{isLogin ? "Login" : "Create Account"}</button>
           )}
-          {isLoading && <p>Sending.....</p>}
-
+          {isLoading && <p>Sending request...</p>}
           <button
             type="button"
             className={classes.toggle}
